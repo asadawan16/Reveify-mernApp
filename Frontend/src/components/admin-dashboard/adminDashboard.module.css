@@ -1,6 +1,7 @@
 .container {
-    max-width: 90%;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0 auto ;
+    padding: 0 50px;
 }
  .admin-header{
     padding: 20px 15px;
@@ -22,7 +23,7 @@
 .admin-dashboard  {
     padding: 20px ;
     background: #F5F5DC;
-    height: 100vh;
+    min-height: 100vh;
 }
 .admin-dashboard h1 {
     cursor: pointer;

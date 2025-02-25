@@ -7,15 +7,14 @@ import AdminDashboard from "./components/admin-dashboard/adminDashboard.jsx";
 import PrivateRoute from "./utils/routeProtection/privateRoute.jsx";
 import Review from "./components/Review/Review.jsx";
 import Welcome from "./components/welcome/welcome.jsx";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getReviews } from "./store/reviews/reviewActions.js";
+
 const App = () => {
-  const reviews = useSelector((state) => state.review.reviews);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getReviews());
-  }, [dispatch]);
-  console.log(reviews);
+  }, []);
   return (
     <Router>
       <Routes>

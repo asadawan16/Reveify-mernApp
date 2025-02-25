@@ -1,0 +1,20 @@
+.Analytics {
+    margin:100px ;
+}
+.Analytics h2 {
+    color: #202224;
+    font-family: 'Poppins';
+    font-size: 24px;    
+    text-align: center;
+    font-weight: 600;
+    line-height: 30px;  
+}
+
+.loading {
+    text-align: center;
+    color:  #4C4C4D;
+    font-family: "Poppins";
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}

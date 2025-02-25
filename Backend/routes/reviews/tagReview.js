@@ -3,8 +3,9 @@ const express = require("express");
 const router = express.Router();
 const ReviewModel = require("../../models/Review");
 const authenticate = require("../../utils/auth/authenticate");
+const authorizeAdmin = require("../../utils/auth/authorize");
 
-router.patch("/reviews/:id/tag", authenticate, async (req, res) => {
+router.put("/updatetag/:id", authenticate, authorizeAdmin, async (req, res) => {
   try {
     const { sentiment, performance, accuracy, complaints } = req.body;
 

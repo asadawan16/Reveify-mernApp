@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BiLogOutCircle } from "react-icons/bi";
 import DataTable from "./DataTable";
@@ -7,8 +7,22 @@ import ordericon from "../../assets/query-icon.png";
 import classes from "./adminDashboard.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/auth/authAction";
+import { fetchUsers } from "../../store/users/userActions";
+import { getReviews } from "../../store/reviews/reviewActions";
+import Analytics from "../Analytics/Analytics";
 const AdminDashboard = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const role = sessionStorage.getItem("user");
+  useEffect(() => {
+    if (role.replace(/"/g, "") !== "admin") {
+      navigate("/login");
+    }
+    dispatch(fetchUsers());
+    dispatch(getReviews());
+  }, [dispatch]);
+  const loadingReviews = useSelector((state) => state.review.isLoading);
+  const users = useSelector((state) => state.user.users);
   const [activeComponent, setActiveComponent] = useState("dashboard");
   const [profileToggle, setProfileToggle] = useState(false);
   const reviews = useSelector((state) => state.review.reviews);
@@ -18,21 +32,20 @@ const AdminDashboard = () => {
       title: "Total Users",
       icon: usericon,
       component: "totalUsers",
-      // value: users.length,
+      value: users.length,
     },
     {
       id: 2,
       title: "Total Reviews",
       icon: ordericon,
       component: "TotalReviews",
-      value: reviews.length,
+      value: reviews?.length || 0,
     },
     {
       id: 3,
-      title: "Total Reviews",
+      title: "Analytics",
       icon: ordericon,
-      component: "TotalReviews",
-      value: reviews.length,
+      component: "Analytics",
     },
   ];
 
@@ -60,11 +73,12 @@ const AdminDashboard = () => {
             <th>orderPrice</th>
             <th>rating</th>
             <th>Review</th>
-            <th>sentiment</th>
-            <th>performance</th>
-            <th>accuracy</th>
+            <th>sentiment, performance ,accuracy</th>
+            <th>Edit Tags</th>
           </DataTable>
         );
+      case "Analytics":
+        return <Analytics />;
 
       default:
         return (

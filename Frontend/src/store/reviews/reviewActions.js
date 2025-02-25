@@ -2,12 +2,14 @@ import API from "../../utils/axiosInstance/axiosInstance";
 import { reviewActions } from "./review-slice";
 
 const token = sessionStorage.getItem("jwtToken");
+const role = sessionStorage.getItem("user");
 export const getReviews = () => async (dispatch) => {
   try {
     dispatch(reviewActions.setLoading(true));
     const { data } = await API.get("/reviews/getreviews", {
       headers: {
         Authorization: `Bearer ${token}`,
+        Role: role,
       },
     });
     dispatch(reviewActions.setReviews(data));
@@ -34,16 +36,17 @@ export const addReview = (review) => async (dispatch) => {
   }
 };
 
-export const tagReview = (reviewId, tags) => async (dispatch) => {
+export const UpdateReviewTag = (reviewId, tags) => async (dispatch) => {
   try {
     dispatch(reviewActions.setLoading(true));
-    const { data } = await API.put(`/reviews/tag-review/${reviewId}`, tags, {
+    const { data } = await API.put(`/reviews/updatetag/${reviewId}`, tags, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
-    dispatch(reviewActions.setReviews(data.reviews));
+    dispatch(getReviews());
     dispatch(reviewActions.setLoading(false));
+    console.log("updated");
   } catch (err) {
     dispatch(reviewActions.setError(err.message));
     console.log(err + "error tagging review");
