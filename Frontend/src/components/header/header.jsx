@@ -19,6 +19,9 @@ const Header = () => {
           <li>
             <NavLink to="/user-dashboard">Dashboard</NavLink>
           </li>
+          <li>
+            <NavLink to="/review-table">Review Data</NavLink>
+          </li>
         </ul>
       </nav>
       <div className={classes.logout}>
