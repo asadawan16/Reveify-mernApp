@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 5000;
 // Cors Configuration
 const allowedOrigins = [
   "http://localhost:5173",
+  "https://reveify-mern-app.vercel.app",
   "https://reveify-mern-app-frontend.vercel.app",
 ];
 // app.use(
