@@ -8,7 +8,10 @@ const ReviewsRoutes = require("./routes/reviews");
 const FetchUserRoute = require("./routes/user/fetchUsers");
 const PORT = process.env.PORT || 5000;
 // Cors Configuration
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://reveify-mern-app-frontend.vercel.app",
+];
 app.use(
   cors(
     {
