@@ -9,6 +9,7 @@ import Review from "./components/Review/Review.jsx";
 import Welcome from "./components/welcome/welcome.jsx";
 import { useDispatch } from "react-redux";
 import { getReviews } from "./store/reviews/reviewActions.js";
+import AuthRedirect from "./utils/routeProtection/AuthRedirect.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,10 +19,31 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route
+          path="/"
+          element={
+            <AuthRedirect>
+              <Welcome />
+            </AuthRedirect>
+          }
+        />
         <Route path="/review" element={<Review />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/login"
+          element={
+            <AuthRedirect>
+              <Login />
+            </AuthRedirect>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <AuthRedirect>
+              <Signup />
+            </AuthRedirect>
+          }
+        />
         <Route path="/user-dashboard" element={<UserDashboard />} />
         <Route
           path="/admin-dashboard"

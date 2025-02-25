@@ -27,13 +27,18 @@ nav ul {
 }
 
 nav ul li a {
+    position: relative;
     color: #fff;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     font-family: 'Poppins';  
 }
-
+nav ul li a:hover {
+    cursor: pointer;
+    color: #F5F5DC;
+    transition: all 0.3s ease-in-out;
+}
 .logout  a{
     position: relative;
     color: #fff;
