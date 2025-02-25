@@ -16,17 +16,13 @@ app.use(
   cors({
     origin: allowedOrigins,
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    headers: {
-      "Access-Control-Allow-Origin": allowedOrigins,
-      Vary: "Origin",
-    },
     exposedHeaders: ["Authorization"],
   })
 );
 // Explicitly handle preflight requests (OPTIONS)
 app.options("*", cors({ origin: allowedOrigins, credentials: true }));
+app.use(express.json());
+app.use("/uploads", express.static("uploads"));
 // Mongodb Connection
 app.use(express.json());
 mongoose
