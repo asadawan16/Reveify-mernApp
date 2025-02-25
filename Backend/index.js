@@ -19,7 +19,7 @@ app.use(
     exposedHeaders: ["Authorization"],
   })
 );
-app.options("*", cors({ origin: allowedOrigins, credentials: false }));
+app.options("*", cors({ origin: allowedOrigins, credentials: true }));
 // Mongodb Connection
 app.use(express.json());
 mongoose
