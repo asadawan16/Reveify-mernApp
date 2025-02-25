@@ -1,0 +1,67 @@
+header{
+    max-width: 90%;
+    margin: 5px  auto ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #a86e3b;
+    border-radius: 40px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+
+}
+
+.logo span {
+    color: #000;
+    line-height: 24px;
+    font-size: 20px;
+    font-weight: 500;
+    text-wrap: nowrap;
+    font-family: 'Poppins';
+    color: #fff;
+}
+nav ul {
+    display: flex  ;
+    align-items: center;
+    column-gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: 'Poppins';  
+}
+
+.logout  a{
+    position: relative;
+    color: #fff;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins';
+    padding: 10px 30px;
+    border-radius: 40px;
+    background-color: #a86e3b;
+    border: 1px solid #f9f9f9;
+    color: #fff;
+    
+}
+.logout a:hover {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border: 1px solid #FCFCFD;
+    transition: all 0.3s ease-in-out;
+    color: #a86e3b;
+}
+.logout a:hover .logoutIcon {
+    color: #a86e3b;
+    transition: all 0.3s ease-in-out;
+
+}
+.logoutIcon {
+    position: absolute;
+    top: 24%;
+    left: 4%;
+}

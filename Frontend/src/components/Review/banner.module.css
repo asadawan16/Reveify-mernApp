@@ -1,0 +1,26 @@
+.banner {
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 0 0 40px  40px;
+    border-bottom:  2px solid #a86e3b;
+    margin-bottom: 100px;
+
+}
+.banner h1 {
+    padding: 130px 50px;
+    max-width: 40%;
+    margin: 0 auto;
+    font-size: 40px;
+    line-height: 70px;
+    font-weight: 600;
+    color: #a86e3b;
+    font-family: 'Poppins';
+    margin-bottom: 10px;
+}
+.banner span {
+    background-color: #a86e3b;
+    padding: 10px 15px;
+    color: #fff;
+    margin-right: 5px;
+    border-radius: 40px;
+}

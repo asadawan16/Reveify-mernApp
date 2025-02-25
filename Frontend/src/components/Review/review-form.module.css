@@ -1,0 +1,66 @@
+.reviewForm {
+    margin: 50px auto;
+}
+.reviewForm h2 {
+    margin: 40px auto;
+    max-width: 40%;
+    color: #a86e3b;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 44px;
+}
+.reviewForm form {
+    margin: 0 auto;
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    padding: 50px;
+    row-gap: 20px;
+    border-radius: 40px;
+    background-color: #f9f9f9;
+}
+.reviewForm form input {
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #FCFCFD;
+    color:  #000;
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    border: none;
+}
+.reviewForm form textarea {
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #FCFCFD;
+    color:  #656567;
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    border: none;
+}
+ .submitbtn {
+    width: 80%;
+    margin: 0 auto;
+    color:  #fff;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 22px ;
+    font-weight: 500;
+    padding: 14px 20px;
+    border-radius: 8px;
+    background-color: #a86e3b;
+    border: 1px solid #fff;
+}
+.submitbtn:hover {
+    cursor: pointer;
+    background-color: #FCFCFD;
+    border: 1px solid #a86e3b;
+    transition: all 0.3s ease-in-out;
+    color: #a86e3b;
+}
