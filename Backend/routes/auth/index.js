@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-// Import individual routes
-const loginRoutes = require("./login");
-const signupRoutes = require("./signup");
+const loginRoute = require("./login");
+const signupRoute = require("./signup");
 
-// Use them under "/api/auth"
-router.use(loginRoutes);
-router.use(signupRoutes);
+router.use(loginRoute);
+router.use(signupRoute);
 
 module.exports = router;

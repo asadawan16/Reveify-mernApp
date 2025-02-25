@@ -11,6 +11,16 @@
     font-weight: 600;
     line-height: 44px;
 }
+.reviewForm h3 {
+    margin: 10px 0;
+    text-align: center;
+    color: #a86e3b;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 44px;
+}
 .reviewForm form {
     margin: 0 auto;
     display: flex;
@@ -24,13 +34,13 @@
 .reviewForm form input {
     padding: 10px 15px;
     border-radius: 8px;
-    background-color: #FCFCFD;
+    background-color: #fff;
+    border: 1px solid #000000dc;
     color:  #000;
     font-family: 'Poppins';
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    border: none;
 }
 .reviewForm form textarea {
     padding: 10px 15px;
@@ -41,11 +51,11 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    border: none;
+    border: 1px solid #000000dc;
 }
  .submitbtn {
     width: 80%;
-    margin: 0 auto;
+    margin: 30px auto;
     color:  #fff;
     text-align: center;
     font-family: 'Poppins';
@@ -64,3 +74,25 @@
     transition: all 0.3s ease-in-out;
     color: #a86e3b;
 }
+.rating {
+    padding: 20px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    justify-content: center;
+    border: 1px solid #000000dc;
+}
+.rating label ,.reviewForm label {
+    font-size: 16px;
+    line-height: 22px;
+    font-family: 'Poppins';
+    color: #000;
+}
+
+  
+  .starselected {
+    transition: all 0.4s ease-in-out;
+    color: #ffcc00 !important;
+  }
+  

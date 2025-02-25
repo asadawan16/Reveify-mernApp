@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 const authRoutes = require("./routes/auth");
-
-const PORT = process.env.PORT;
+const ReviewsRoutes = require("./routes/reviews");
+const PORT = process.env.PORT || 5000;
 // Cors Configuration
 const allowedOrigins = ["http://localhost:5173"];
 app.use(
@@ -29,11 +29,12 @@ app.use(
 // Mongodb Connection
 app.use(express.json());
 mongoose
-  .connect(process.env.MONGO_URl)
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB Connection Error:", err));
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/reviews", ReviewsRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello Server is Running");

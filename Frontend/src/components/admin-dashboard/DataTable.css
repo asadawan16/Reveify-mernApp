@@ -2,49 +2,50 @@
     border-radius: 12px ;
     padding: 30px;
     background: #fff;
+    padding: 20px;
+    width: 82%;
+    margin: 20px auto;
   }
   /* Heading */
  .Data-Table h1 {
     margin-bottom: 35px;
     color: #202224;
-    font-family: 'Cinzel';
+    font-family: 'Poppins';
     font-size: 32px;
-    font-style: normal;
+    line-height: 38px; 
     font-weight: 600;
-    line-height: 20px; 
+    text-align: center;
   }
   
  .table {
-    width: 100%;
     background-color: #FFFFFF;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     overflow: hidden;
   }
-  .table tr {
-    width: 30%;
-  }
+  
  .tableheader {
     border-radius: 12px;
     background: #faf5f0;
     border: none;
   }
-  .tableheader th {
+  .tableheader tr th {
+    padding: 20px 10px;
     color: #202224;
-    font-family: 'Cinzel';
+    font-family: 'Poppins';
+    text-align: center;
     font-size: 16px;
     font-weight: 600;
     line-height: 22px;
-    text-align: left;
+    text-transform: capitalize;
   }
- .tableheader th{
-    padding: 15px;
-  }
+ 
   .tablebody tr td  {
     padding: 32px 0 32px 15px;
     color: #202224;
-    font-family: 'Cinzel';
+    font-family: 'Poppins';
     font-size: 14px;
+    text-align: center;
     font-weight: 500;
     line-height: 22px;
     border-bottom: 1px solid #97979741;
@@ -71,7 +72,7 @@
   }
 .page-info {
     color: #3D42DF;
-    font-family: 'Cinzel';
+    font-family: 'Poppins';
     font-size: 14px;
     font-weight: 600;
     line-height: 22px;
@@ -80,7 +81,7 @@
     padding: 10px 15px;
     color: #000;
     background-color:#F1F4F9 ;
-    font-family: 'Cinzel';
+    font-family: 'Poppins';
     border: NONE;
     font-size: 16px;
     font-weight: 400;
@@ -112,7 +113,7 @@
   border: 1px solid #97979741;
   background-color: #faf5f0;
   color: #202224;
-  font-family: 'Cinzel';
+  font-family: 'Poppins';
   font-size: 16px;
   font-weight: 400; 
   line-height: 22px;  
@@ -127,7 +128,7 @@
   border: 1px solid #97979741;
   background-color: #F1F4F9;
   color: #202224;
-  font-family: 'Cinzel';
+  font-family: 'Poppins';
   font-size: 16px;
   font-weight: 400; 
   line-height: 22px;  
@@ -142,7 +143,7 @@
   border: 1px solid #97979741;
   background-color: #F1F4F9;
   color: #202224;
-  font-family: 'Cinzel';
+  font-family: 'Poppins';
   font-size: 16px;
   font-weight: 400; 
   line-height: 22px;  

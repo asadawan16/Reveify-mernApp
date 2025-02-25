@@ -1,0 +1,120 @@
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+ .admin-header{
+    padding: 20px 15px;
+    width: 94%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.admin-logo h1  {
+    color: #202224;
+    font-family: 'Poppins';
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 38px;
+
+
+}
+.admin-dashboard  {
+    padding: 20px ;
+    background: #F5F5DC;
+    height: 100vh;
+}
+.admin-dashboard h1 {
+    cursor: pointer;
+    margin: 30px 0 30px 7%;
+    color: #202224;
+    font-family: 'Poppins';    
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: -0.114px;
+}
+.dashboard-title h2 {
+    color: #202224;
+    font-family: 'Poppins';
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+.admin-dashboard h1:hover {
+    transition: transform 0.3s ease-in-out; 
+    transform: translateZ(2px); 
+}
+
+.option-grid{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    gap: 30px;
+}
+.option {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    padding: 20px;
+    border-radius: 14px;
+    background: #FFF;
+    box-shadow: 6px 6px 54px 0px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+.option.active {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+  }
+  
+.option .option-info h2 {
+    margin-bottom: 16px;
+    color: #202224;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+}
+.option .option-info p {
+    color: #202224;
+    font-family: 'Poppins';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.logout  a{
+    position: relative;
+    color: #fff;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins';
+    padding: 10px 30px;
+    border-radius: 40px;
+    background-color: #a86e3b;
+    border: 1px solid #f9f9f9;
+    color: #fff;
+    
+}
+.logout a:hover {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border: 1px solid #a86e3b;
+    transition: all 0.3s ease-in-out;
+    color: #a86e3b;
+}
+.logout a:hover .logoutIcon {
+    color: #a86e3b;
+    transition: all 0.3s ease-in-out;
+
+}
+.logoutIcon {
+    position: absolute;
+    top: 24%;
+    left: 4%;
+}
