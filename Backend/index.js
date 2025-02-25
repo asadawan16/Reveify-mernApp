@@ -10,37 +10,16 @@ const PORT = process.env.PORT || 5000;
 // Cors Configuration
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://reveify-mern-app.vercel.app",
   "https://reveify-mern-app-frontend.vercel.app",
 ];
-// app.use(
-//   cors({
-//     origin: allowedOrigins,
-//     credentials: true,
-//     exposedHeaders: ["Authorization"],
-//   })
-// );
-// app.options("*", cors({ origin: allowedOrigins, credentials: true }));
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (mobile apps, curl)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.indexOf(origin) === -1) {
-        const msg = `CORS policy: ${origin} not allowed`;
-        return callback(new Error(msg), false);
-      }
-      return callback(null, true);
-    },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: allowedOrigins,
     credentials: true,
     exposedHeaders: ["Authorization"],
   })
 );
-
-// Handle preflight requests
-app.options("*", cors());
+app.options("*", cors({ origin: allowedOrigins, credentials: false }));
 // Mongodb Connection
 app.use(express.json());
 mongoose
