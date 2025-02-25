@@ -8,30 +8,28 @@ const ReviewsRoutes = require("./routes/reviews");
 const FetchUserRoute = require("./routes/user/fetchUsers");
 const PORT = process.env.PORT || 5000;
 // Cors Configuration
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://reveify-mern-app-frontend.vercel.app",
-];
-app.use(cors({ origin: allowedOrigins, credentials: true }));
-
-app.options("*", cors());
-
 app.use((req, res, next) => {
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-    res.setHeader(
-      "Access-Control-Allow-Methods",
-      "GET, POST, PUT, DELETE, OPTIONS"
-    );
-    res.setHeader(
-      "Access-Control-Allow-Headers",
-      "Content-Type, Authorization"
-    );
-    res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
   }
   next();
 });
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://reveify-mern-app-frontend.vercel.app",
+    ],
+    credentials: true,
+  })
+);
+
 // Mongodb Connection
 app.use(express.json());
 mongoose
