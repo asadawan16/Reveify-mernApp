@@ -19,16 +19,7 @@ h1,h2,h3,h4,h5,h6 {
   max-width: 1260px ;
   margin: 0 auto;
 }
-/* fonts */
 
-@font-face {
-  font-family: 'Nunito Sans 10pt';
-  src: url('./fonts/NunitoSans10pt-Bold.woff2') format('woff2'),
-      url('./fonts/NunitoSans10pt-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* POPPINS FONT */
 @font-face {
