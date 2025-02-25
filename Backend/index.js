@@ -18,9 +18,9 @@ app.use(
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    AccessControlAllowCredentials: true,
     headers: {
       "Access-Control-Allow-Origin": allowedOrigins,
+      Vary: "Origin",
     },
     exposedHeaders: ["Authorization"],
   })
