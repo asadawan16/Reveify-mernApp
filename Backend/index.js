@@ -7,20 +7,20 @@ const authRoutes = require("./routes/auth");
 const ReviewsRoutes = require("./routes/reviews");
 const FetchUserRoute = require("./routes/user/fetchUsers");
 const PORT = process.env.PORT || 5000;
-// Cors Configuration
+const allowedOrigins = [
+  "https://reveify-mern-app-frontend.vercel.app",
+  "http://localhost:3000",
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://reveify-mern-app-frontend.vercel.app",
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: allowedOrigins,
     credentials: true,
     exposedHeaders: ["Authorization"],
   })
 );
-app.options("*", cors());
+// Explicitly handle preflight requests (OPTIONS)
+app.options("*", cors({ origin: allowedOrigins, credentials: true }));
 // Mongodb Connection
 app.use(express.json());
 mongoose
