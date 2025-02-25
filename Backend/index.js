@@ -9,30 +9,18 @@ const FetchUserRoute = require("./routes/user/fetchUsers");
 const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   "https://reveify-mern-app-frontend.vercel.app",
-  "http://localhost:3000",
+  "http://localhost:5173",
 ];
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    const allowedOrigins = [
-      "https://reveify-mern-app-frontend.vercel.app",
-      "http://localhost:3000",
-    ];
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
-
-app.use(cors(corsOptions));
-
-app.options("*", cors(corsOptions));
-
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+    exposedHeaders: ["Authorization"],
+  })
+);
+// Explicitly handle preflight requests (OPTIONS)
+app.options("*", cors({ origin: allowedOrigins, credentials: true }));
 // Mongodb Connection
 app.use(express.json());
 mongoose

@@ -9,6 +9,9 @@
     "vercel-start": "node index",
     "dev": "nodemon index.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "apos-to-lex-form": "^1.0.5",
     "bcrypt": "^5.1.1",
