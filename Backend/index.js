@@ -12,24 +12,15 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://reveify-mern-app-frontend.vercel.app",
 ];
+
 app.use(
-  cors(
-    {
-      origin: allowedOrigins,
-      credentials: true,
-      exposedHeaders: ["Authorization"],
-    },
-    (req, res, next) => {
-      res.setHeader("Access-Control-Allow-Origin", allowedOrigins);
-      res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-      res.setHeader(
-        "Access-Control-Allow-Headers",
-        "Content-Type, Authorization"
-      );
-      next();
-    }
-  )
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+    exposedHeaders: ["Authorization"],
+  })
 );
+app.options("*", cors({ origin: allowedOrigins, credentials: true }));
 // Mongodb Connection
 app.use(express.json());
 mongoose
