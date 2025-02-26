@@ -6,7 +6,6 @@ const getReviewRoute = require("./getReviews");
 const postReviewRoute = require("./postReviews");
 const tagReviewRoute = require("./tagReview");
 
-// Use them under "/api/auth"
 router.use(getReviewRoute);
 router.use(postReviewRoute);
 router.use(tagReviewRoute);
