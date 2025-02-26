@@ -19,12 +19,10 @@ app.use(
     exposedHeaders: ["Authorization"],
   })
 );
-// Explicitly handle preflight requests (OPTIONS)
 app.options("*", cors({ origin: allowedOrigins, credentials: true }));
+
 app.use(express.json());
-app.use("/uploads", express.static("uploads"));
 // Mongodb Connection
-app.use(express.json());
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
