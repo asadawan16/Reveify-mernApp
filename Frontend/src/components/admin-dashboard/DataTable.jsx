@@ -5,35 +5,41 @@ import UpdateTags from "./updateTags";
 import ReviewDataFiltering from "../ReviewTable/ReviewDataFiltering";
 import { useSelector } from "react-redux";
 
-const DataTable = ({ children, title, data, state }) => {
+const DataTable = ({ children, title, reviewsdata, userdata, state }) => {
   const [updateTagsToggle, setToggle] = useState(false);
   const [tags, setTag] = useState({});
   const [Reviewid, setReviewid] = useState(null);
   const filteredReviews = useSelector((state) => state.review.filteredReviews);
-  const [tableData, setTableData] = useState(data);
+  const [ReviewtableData, setReviewTableData] = useState(reviewsdata);
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
   useEffect(() => {
-    if (state !== "reviews") return;
-
-    if (filteredReviews.length > 0) {
-      setTableData(filteredReviews);
-    } else {
-      setTableData(data);
+    if (state === "reviews") {
+      setReviewTableData(
+        filteredReviews.length > 0 ? filteredReviews : reviewsdata
+      );
     }
-  }, [filteredReviews, data, state]);
+  }, [filteredReviews, reviewsdata, state]);
 
-  if (!tableData) {
-    return null;
-  }
-  const totalPages = Math.ceil(tableData.length / itemsPerPage);
+  const totalPages = Math.ceil(
+    (ReviewtableData && ReviewtableData.length
+      ? ReviewtableData.length
+      : userdata?.length) / itemsPerPage
+  );
 
   // Get the data for the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentData = tableData.slice(indexOfFirstItem, indexOfLastItem);
+  const currentData =
+    state === "reviews"
+      ? ReviewtableData?.length
+        ? ReviewtableData.slice(indexOfFirstItem, indexOfLastItem)
+        : []
+      : userdata?.length
+      ? userdata.slice(indexOfFirstItem, indexOfLastItem)
+      : [];
 
   // Handle page selection from dropdown
   const handlePageChange = (event) => {
@@ -53,7 +59,7 @@ const DataTable = ({ children, title, data, state }) => {
             <tbody className={classes.tablebody}>
               {state === "reviews" ? (
                 <>
-                  {currentData.map((review, index) => (
+                  {currentData?.map((review, index) => (
                     <Fragment key={index}>
                       <tr key={index}>
                         <td>{indexOfFirstItem + index + 1}</td>
@@ -66,6 +72,8 @@ const DataTable = ({ children, title, data, state }) => {
                         <td>{review.rating}</td>
                         <td>{review.reviewText}</td>
                         <td>
+                          {console.log(review.tags)}
+
                           {`${review.tags.sentiment}, ${review.tags.performance}, ${review.tags.accuracy}`}
                         </td>
                         <td>
@@ -87,6 +95,8 @@ const DataTable = ({ children, title, data, state }) => {
               ) : null}
               {state === "user" ? (
                 <>
+                  {console.log(currentData)}
+
                   {currentData.map((user, index) => (
                     <tr key={index}>
                       <td>{user._id}</td>

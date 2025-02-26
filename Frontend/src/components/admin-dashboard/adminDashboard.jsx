@@ -55,7 +55,7 @@ const AdminDashboard = () => {
     switch (activeComponent) {
       case "totalUsers":
         return (
-          <DataTable title="Total Users" data={users} state="user">
+          <DataTable title="Total Users" userdata={users} state="user">
             <th>User ID</th>
             <th>Username</th>
             <th>Email</th>
@@ -65,7 +65,11 @@ const AdminDashboard = () => {
 
       case "TotalReviews":
         return (
-          <DataTable title="Total Reviews" data={reviews} state="reviews">
+          <DataTable
+            title="Total Reviews"
+            reviewsdata={reviews}
+            state="reviews"
+          >
             <th>S.no</th>
             <th>agentId</th>
             <th>agentName</th>
