@@ -47,6 +47,7 @@ const AdminDashboard = () => {
       title: "Analytics",
       icon: ordericon,
       component: "Analytics",
+      value: 5,
     },
   ];
 

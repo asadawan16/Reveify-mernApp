@@ -21,7 +21,6 @@ const App = () => {
       dispatch(getReviews());
     }
   }, [token, dispatch]);
-  console.log(token);
   return (
     <Router>
       <Routes>

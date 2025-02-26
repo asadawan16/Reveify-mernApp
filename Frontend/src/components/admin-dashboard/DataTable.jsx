@@ -1,26 +1,39 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import classes from "./DataTable.module.css";
 import { Link } from "react-router-dom";
 import UpdateTags from "./updateTags";
+import ReviewDataFiltering from "../ReviewTable/ReviewDataFiltering";
+import { useSelector } from "react-redux";
 
 const DataTable = ({ children, title, data, state }) => {
-  const [toggle, setToggle] = useState(false);
+  const [updateTagsToggle, setToggle] = useState(false);
   const [tags, setTag] = useState({});
   const [Reviewid, setReviewid] = useState(null);
+  const filteredReviews = useSelector((state) => state.review.filteredReviews);
+  const [tableData, setTableData] = useState(data);
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // Calculate total pages
-  if (!data) {
+  useEffect(() => {
+    if (state !== "reviews") return;
+
+    if (filteredReviews.length > 0) {
+      setTableData(filteredReviews);
+    } else {
+      setTableData(data);
+    }
+  }, [filteredReviews, data, state]);
+
+  if (!tableData) {
     return null;
   }
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const totalPages = Math.ceil(tableData.length / itemsPerPage);
 
   // Get the data for the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentData = data.slice(indexOfFirstItem, indexOfLastItem);
+  const currentData = tableData.slice(indexOfFirstItem, indexOfLastItem);
 
   // Handle page selection from dropdown
   const handlePageChange = (event) => {
@@ -30,7 +43,8 @@ const DataTable = ({ children, title, data, state }) => {
   return (
     <div className={classes["Data-Table"]}>
       <h1>{title}</h1>
-      {!toggle && (
+      {state === "reviews" && <ReviewDataFiltering />}
+      {!updateTagsToggle && (
         <>
           <table className={classes.table}>
             <thead className={classes.tableheader}>
@@ -120,7 +134,9 @@ const DataTable = ({ children, title, data, state }) => {
         </>
       )}
 
-      {toggle && <UpdateTags setToggle={setToggle} tags={tags} id={Reviewid} />}
+      {updateTagsToggle && (
+        <UpdateTags setToggle={setToggle} tags={tags} id={Reviewid} />
+      )}
     </div>
   );
 };

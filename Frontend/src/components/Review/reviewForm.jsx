@@ -51,21 +51,22 @@ const ReviewForm = () => {
       rating,
     };
     try {
+      // Dispatch the action with review data
       await dispatch(addReview(reviewData));
       alert("Review added successfully");
     } catch {
       alert("Failed to add review");
     }
-    // Dispatch the action with review data
 
     // Clear form fields
-    // setAgentName("");
-    // setLocation("");
-    // setReviewText("");
-    // setDiscount(null);
-    // setOrderPrice(null);
-    // setCustomerId(null);
-    // setRating(null);
+    setAgentId("");
+    setAgentName("");
+    setLocation("");
+    setReviewText("");
+    setDiscount("");
+    setOrderPrice("");
+    setCustomerId("");
+    setRating("");
   };
 
   return (
@@ -79,6 +80,7 @@ const ReviewForm = () => {
           placeholder="AgentId"
           value={agentId}
           onChange={(e) => setAgentId(e.target.value)}
+          required
         />
 
         <label htmlFor="AgentName">Agent Name</label>
@@ -87,6 +89,7 @@ const ReviewForm = () => {
           placeholder="Agent Name"
           value={agentName}
           onChange={(e) => setAgentName(e.target.value)}
+          required
         />
         <label htmlFor="Location">Location</label>
         <input
@@ -94,6 +97,7 @@ const ReviewForm = () => {
           placeholder="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
+          required
         />
         <label htmlFor="OrderPrice"> Order Price</label>
         <input
@@ -101,6 +105,7 @@ const ReviewForm = () => {
           placeholder="Order Price"
           value={orderPrice}
           onChange={(e) => setOrderPrice(e.target.value)}
+          required
         />
         <label htmlFor="Discount"> Discount</label>
         <input
@@ -108,6 +113,7 @@ const ReviewForm = () => {
           placeholder="Discount Applied"
           value={discountApplied}
           onChange={(e) => setDiscount(e.target.value)}
+          required
         />
         <label htmlFor="CustomerId">Customer Id</label>
         <input
@@ -115,6 +121,7 @@ const ReviewForm = () => {
           placeholder="Customer Id"
           value={customerId}
           onChange={(e) => setCustomerId(e.target.value)}
+          required
         />
         <label htmlFor="Review"> Review</label>
         <textarea
@@ -122,6 +129,7 @@ const ReviewForm = () => {
           id=""
           cols="30"
           rows="5"
+          value={reviewText}
           onChange={(e) => setReviewText(e.target.value)}
           placeholder="Review"
         ></textarea>

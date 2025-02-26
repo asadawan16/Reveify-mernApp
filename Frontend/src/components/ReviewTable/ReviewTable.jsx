@@ -1,23 +1,30 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import classes from "./ReviewTable.module.css";
 import { useSelector } from "react-redux";
 import Header from "../header/header";
-const ReviewTable = ({}) => {
-  const data = useSelector((state) => state.review.reviews);
-
+import ReviewDataFiltering from "./ReviewDataFiltering";
+const ReviewTable = () => {
+  // Assigning local States for pagination and filtered reviews
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+  const reviews = useSelector((state) => state.review.reviews);
+  const filteredReviews = useSelector((state) => state.review.filteredReviews);
+  const [displayedReviews, setDisplayedReviews] = useState(reviews);
 
-  // Calculate total pages
-  if (!data) {
-    return null;
-  }
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  useEffect(() => {
+    if (filteredReviews.length > 0) {
+      setDisplayedReviews(filteredReviews);
+    } else {
+      setDisplayedReviews(reviews);
+    }
+  }, [filteredReviews, reviews]);
+  const totalPages = Math.ceil(displayedReviews.length / itemsPerPage);
 
+  // Pagination logic
   // Get the data for the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentData = data.slice(indexOfFirstItem, indexOfLastItem);
+  const currentData = displayedReviews.slice(indexOfFirstItem, indexOfLastItem);
 
   // Handle page selection from dropdown
   const handlePageChange = (event) => {
@@ -30,6 +37,7 @@ const ReviewTable = ({}) => {
       <div className={classes["Data-Table"]}>
         <h1>Reviews</h1>
         <>
+          <ReviewDataFiltering />
           <table className={classes.table}>
             <thead className={classes.tableheader}>
               <tr>
