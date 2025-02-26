@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import classes from "./login.module.css";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
+import { getReviews } from "../../store/reviews/reviewActions";
+import { fetchUsers } from "../../store/users/userActions";
 import { authenticate } from "../../store/auth/authAction";
 const Login = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -11,6 +13,7 @@ const Login = () => {
   const [toggledisabled, setToggleDisabled] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };

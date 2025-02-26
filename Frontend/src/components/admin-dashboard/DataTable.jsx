@@ -72,8 +72,6 @@ const DataTable = ({ children, title, reviewsdata, userdata, state }) => {
                         <td>{review.rating}</td>
                         <td>{review.reviewText}</td>
                         <td>
-                          {console.log(review.tags)}
-
                           {`${review.tags.sentiment}, ${review.tags.performance}, ${review.tags.accuracy}`}
                         </td>
                         <td>
@@ -95,8 +93,6 @@ const DataTable = ({ children, title, reviewsdata, userdata, state }) => {
               ) : null}
               {state === "user" ? (
                 <>
-                  {console.log(currentData)}
-
                   {currentData.map((user, index) => (
                     <tr key={index}>
                       <td>{user._id}</td>

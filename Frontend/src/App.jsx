@@ -7,20 +7,11 @@ import AdminDashboard from "./components/admin-dashboard/adminDashboard.jsx";
 import PrivateRoute from "./utils/routeProtection/privateRoute.jsx";
 import Review from "./components/Review/Review.jsx";
 import Welcome from "./components/welcome/welcome.jsx";
-import { useDispatch } from "react-redux";
-import { getReviews } from "./store/reviews/reviewActions.js";
 import AuthRedirect from "./utils/routeProtection/AuthRedirect.jsx";
 import ReviewTable from "./components/ReviewTable/ReviewTable.jsx";
 import PrivateUserRoute from "./utils/routeProtection/UserRoutes.jsx";
 
 const App = () => {
-  const dispatch = useDispatch();
-  const token = sessionStorage.getItem("jwtToken");
-  useEffect(() => {
-    if (token !== null && token !== "undefined") {
-      dispatch(getReviews());
-    }
-  }, [token, dispatch]);
   return (
     <Router>
       <Routes>

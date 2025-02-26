@@ -7,20 +7,16 @@ function AuthRedirect({ children }) {
   const userRole = sessionStorage.getItem("user");
 
   useEffect(() => {
-    if (token && token !== "undefined") {
-      if (userRole === '"admin"') {
+    if (token) {
+      if (userRole === "admin") {
         navigate("/admin-dashboard", { replace: true });
-      } else {
+      } else if (userRole === "user") {
         navigate("/review", { replace: true });
       }
     }
   }, [token, userRole, navigate]);
 
-  if (token && token !== "undefined") {
-    return null;
-  }
-
-  return children;
+  return token ? null : children;
 }
 
 export default AuthRedirect;

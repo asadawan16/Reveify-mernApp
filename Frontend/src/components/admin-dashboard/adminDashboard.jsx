@@ -11,36 +11,53 @@ import { fetchUsers } from "../../store/users/userActions";
 import { getReviews } from "../../store/reviews/reviewActions";
 import Analytics from "../Analytics/Analytics";
 import Footer from "../footer/footer";
+
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const role = sessionStorage.getItem("user");
-  useEffect(() => {
-    if (role.replace(/"/g, "") !== "admin") {
-      navigate("/login");
-    }
-    dispatch(fetchUsers());
-    dispatch(getReviews());
-  }, [dispatch]);
-  const loadingReviews = useSelector((state) => state.review.isLoading);
-  const users = useSelector((state) => state.user.users);
+  const { users, isLoading: usersLoading } = useSelector((state) => state.user);
+  const { reviews, isLoading: reviewsLoading } = useSelector(
+    (state) => state.review
+  );
   const [activeComponent, setActiveComponent] = useState("dashboard");
-  const [profileToggle, setProfileToggle] = useState(false);
-  const reviews = useSelector((state) => state.review.reviews);
+
+  //  loading state
+  const isDataLoading = usersLoading || reviewsLoading;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = sessionStorage.getItem("jwtToken");
+        const role = sessionStorage.getItem("user");
+
+        if (!token || role !== "admin") {
+          dispatch(logout());
+          navigate("/login");
+          return;
+        }
+
+        await Promise.all([dispatch(getReviews()), dispatch(fetchUsers())]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [dispatch, navigate]);
   const OptionData = [
     {
       id: 1,
       title: "Total Users",
       icon: usericon,
       component: "totalUsers",
-      value: users.length,
+      value: isDataLoading ? "--" : users.length,
     },
     {
       id: 2,
       title: "Total Reviews",
       icon: ordericon,
       component: "TotalReviews",
-      value: reviews?.length || 0,
+      value: isDataLoading ? "--" : reviews?.length || 0,
     },
     {
       id: 3,
@@ -51,6 +68,7 @@ const AdminDashboard = () => {
     },
   ];
 
+  // Rest of your component remains exactly the same
   const renderActiveComponent = () => {
     switch (activeComponent) {
       case "totalUsers":
@@ -87,17 +105,13 @@ const AdminDashboard = () => {
         return <Analytics />;
 
       default:
-        return (
-          // <div className={classes["dashboard-title"]}>
-          //   <h2>Welcome to the Admin Dashboard</h2>
-          // </div>
-          <Analytics />
-        );
+        return <Analytics />;
     }
   };
 
   return (
     <>
+      {/* Keep all your existing JSX structure */}
       <div className={classes["admin-header"]}>
         <div className={classes["admin-logo"]}>
           <Link to={"/admin-dashboard"}>

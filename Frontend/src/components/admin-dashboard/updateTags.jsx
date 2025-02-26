@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./updateTags.module.css";
 import { useDispatch } from "react-redux";
-import { UpdateReviewTag } from "../../store/reviews/reviewActions";
+import { getReviews, UpdateReviewTag } from "../../store/reviews/reviewActions";
 
 const UpdateTags = ({ id, tags, setToggle }) => {
   const dispatch = useDispatch();
