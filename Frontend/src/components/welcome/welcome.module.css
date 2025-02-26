@@ -20,7 +20,33 @@
     margin-bottom: 40px;
     text-align: center;
 }
+.note {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 40%;
+    margin: 30px auto;
+    font-family: 'Poppins';
+    margin-bottom: 40px;
+    color: rgba(255, 0, 0, 0.801);
+    text-align: center;
 
+}
+.note a{
+    display: inline-block;
+    color: #a86e3b;
+    margin: 0 5px;
+    border-radius: 8px;
+    text-decoration: underline;
+    padding: 10px 15px;
+    border: 1px solid #a86e3b;
+}
+.note a:hover {
+    cursor: pointer;
+    background-color: #a86e3b;
+    border: 1px solid #a86e3b;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+}
 .welcomebtn{
     display: block;
     width: 200px;

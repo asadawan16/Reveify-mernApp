@@ -12,6 +12,13 @@ const Welcome = () => {
       <Link to="/signup" className={classes.welcomebtn}>
         Sign up
       </Link>
+      <p className={classes.note}>
+        Note: The deployed frontend is facing CORS issue if you want to view
+        User based Ui you can access it through this user specific route
+        <Link to={"/review"}>review page</Link>
+        the route protection is removed . To test on Localhost uncomment the
+        localhost url in axiosInstance at Frontend/src/utils/axiosInstance
+      </p>
     </div>
   );
 };
