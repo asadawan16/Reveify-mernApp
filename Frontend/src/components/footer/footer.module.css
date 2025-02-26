@@ -1,6 +1,8 @@
 footer {
     padding: 40px 0 10px;
     background-color: #F5F5DC;
+    border: 1px  solid #a86e3b;
+    border-bottom: none !important;
     border-radius: 40px 40px 0 0;
 }
 footer .container {

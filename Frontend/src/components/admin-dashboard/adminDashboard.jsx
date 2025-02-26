@@ -10,6 +10,7 @@ import { logout } from "../../store/auth/authAction";
 import { fetchUsers } from "../../store/users/userActions";
 import { getReviews } from "../../store/reviews/reviewActions";
 import Analytics from "../Analytics/Analytics";
+import Footer from "../footer/footer";
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -82,9 +83,10 @@ const AdminDashboard = () => {
 
       default:
         return (
-          <div className={classes["dashboard-title"]}>
-            <h2>Welcome to the Admin Dashboard</h2>
-          </div>
+          // <div className={classes["dashboard-title"]}>
+          //   <h2>Welcome to the Admin Dashboard</h2>
+          // </div>
+          <Analytics />
         );
     }
   };
@@ -117,7 +119,11 @@ const AdminDashboard = () => {
               <li
                 key={option.id}
                 className={classes.option}
-                onClick={() => setActiveComponent(option.component)}
+                onClick={() =>
+                  setActiveComponent(
+                    option.component ? option.component : "Analytics"
+                  )
+                }
               >
                 <div className={classes["option-info"]}>
                   <h2>{option.title}</h2>
@@ -133,6 +139,7 @@ const AdminDashboard = () => {
             {renderActiveComponent()}
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

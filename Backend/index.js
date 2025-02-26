@@ -12,15 +12,19 @@ const allowedOrigins = [
   "http://localhost:5173",
 ];
 
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: true,
-    exposedHeaders: ["Authorization"],
-  })
-);
-app.options("*", cors({ origin: allowedOrigins, credentials: true }));
-
+// app.use(
+//   cors({
+//     origin: allowedOrigins,
+//     credentials: true,
+//     exposedHeaders: ["Authorization"],
+//   })
+// );
+// app.options("*", cors({ origin: allowedOrigins, credentials: true }));
+const corsOptions = {
+  origin: allowedOrigins,
+  credentials: true,
+  exposedHeaders: ["Authorization"],
+};
 app.use(express.json());
 // Mongodb Connection
 mongoose
@@ -28,9 +32,9 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB Connection Error:", err));
 // Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/reviews", ReviewsRoutes);
-app.use("/api/user", FetchUserRoute);
+app.use("/api/auth", cors(corsOptions), authRoutes);
+app.use("/api/reviews", cors(corsOptions), ReviewsRoutes);
+app.use("/api/user", cors(corsOptions), FetchUserRoute);
 app.get("/", (req, res) => {
   res.send("Hello Server is Running");
 });

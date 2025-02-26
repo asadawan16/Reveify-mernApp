@@ -11,12 +11,17 @@ import { useDispatch } from "react-redux";
 import { getReviews } from "./store/reviews/reviewActions.js";
 import AuthRedirect from "./utils/routeProtection/AuthRedirect.jsx";
 import ReviewTable from "./components/ReviewTable/ReviewTable.jsx";
+import PrivateUserRoute from "./utils/routeProtection/UserRoutes.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
+  const token = sessionStorage.getItem("jwtToken");
   useEffect(() => {
-    dispatch(getReviews());
-  }, []);
+    if (token !== null && token !== "undefined") {
+      dispatch(getReviews());
+    }
+  }, [token, dispatch]);
+  console.log(token);
   return (
     <Router>
       <Routes>
@@ -28,8 +33,22 @@ const App = () => {
             </AuthRedirect>
           }
         />
-        <Route path="/review" element={<Review />} />
-        <Route path="/review-table" element={<ReviewTable />} />
+        <Route
+          path="/review"
+          element={
+            <PrivateUserRoute>
+              <Review />
+            </PrivateUserRoute>
+          }
+        />
+        <Route
+          path="/review-table"
+          element={
+            <PrivateUserRoute>
+              <ReviewTable />
+            </PrivateUserRoute>
+          }
+        />
         <Route
           path="/login"
           element={
@@ -46,7 +65,14 @@ const App = () => {
             </AuthRedirect>
           }
         />
-        <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route
+          path="/user-dashboard"
+          element={
+            <PrivateUserRoute>
+              <UserDashboard />
+            </PrivateUserRoute>
+          }
+        />
         <Route
           path="/admin-dashboard"
           element={
