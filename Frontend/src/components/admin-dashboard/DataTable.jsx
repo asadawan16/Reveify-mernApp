@@ -103,14 +103,16 @@ const DataTable = ({ children, title, reviewsdata, userdata, state }) => {
                       <td>{user.role}</td>
 
                       <td>
-                        <Link
-                          className={classes.editbtn}
-                          onClick={() => {
-                            dispatch(blockUnblockUser(user._id));
-                          }}
-                        >
-                          {user.status === "active" ? "block" : "unblock"}
-                        </Link>
+                        {user.role !== "admin" && (
+                          <Link
+                            className={classes.editbtn}
+                            onClick={() => {
+                              dispatch(blockUnblockUser(user._id));
+                            }}
+                          >
+                            {user.status === "active" ? "block" : "unblock"}
+                          </Link>
+                        )}
                       </td>
                     </tr>
                   ))}
