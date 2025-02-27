@@ -8,7 +8,7 @@ const Footer = () => {
     <footer>
       <div className={classes.container}>
         <h2>Reviefy</h2>
-        {role === "user " && (
+        {role === "user" && (
           <ul>
             <li>
               <Link to="/">Reviews</Link>
