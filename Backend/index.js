@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 const authRoutes = require("./routes/auth");
 const ReviewsRoutes = require("./routes/reviews");
-const FetchUserRoute = require("./routes/user/fetchUsers");
+const FetchUserRoute = require("./routes/user");
 const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   "https://reveify-mern-app--mu.vercel.app",
