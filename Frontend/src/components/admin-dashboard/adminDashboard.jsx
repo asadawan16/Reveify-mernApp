@@ -78,6 +78,7 @@ const AdminDashboard = () => {
             <th>Username</th>
             <th>Email</th>
             <th>Role</th>
+            <th>User Status</th>
           </DataTable>
         );
 

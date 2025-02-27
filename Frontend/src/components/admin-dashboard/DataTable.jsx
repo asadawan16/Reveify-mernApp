@@ -3,9 +3,11 @@ import classes from "./DataTable.module.css";
 import { Link } from "react-router-dom";
 import UpdateTags from "./updateTags";
 import ReviewDataFiltering from "../ReviewTable/ReviewDataFiltering";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { blockUnblockUser } from "../../store/users/userActions";
 
 const DataTable = ({ children, title, reviewsdata, userdata, state }) => {
+  const dispatch = useDispatch();
   const [updateTagsToggle, setToggle] = useState(false);
   const [tags, setTag] = useState({});
   const [Reviewid, setReviewid] = useState(null);
@@ -99,6 +101,17 @@ const DataTable = ({ children, title, reviewsdata, userdata, state }) => {
                       <td>{user.username}</td>
                       <td>{user.email}</td>
                       <td>{user.role}</td>
+
+                      <td>
+                        <Link
+                          className={classes.editbtn}
+                          onClick={() => {
+                            dispatch(blockUnblockUser(user._id));
+                          }}
+                        >
+                          {user.status === "active" ? "block" : "unblock"}
+                        </Link>
+                      </td>
                     </tr>
                   ))}
                 </>
