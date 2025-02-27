@@ -68,7 +68,6 @@ const AdminDashboard = () => {
     },
   ];
 
-  // Rest of your component remains exactly the same
   const renderActiveComponent = () => {
     switch (activeComponent) {
       case "totalUsers":
@@ -112,7 +111,6 @@ const AdminDashboard = () => {
 
   return (
     <>
-      {/* Keep all your existing JSX structure */}
       <div className={classes["admin-header"]}>
         <div className={classes["admin-logo"]}>
           <Link to={"/admin-dashboard"}>

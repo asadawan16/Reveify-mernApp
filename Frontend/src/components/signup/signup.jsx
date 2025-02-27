@@ -97,7 +97,6 @@ const Signup = () => {
               id="password"
               placeholder="Enter your password"
               value={password}
-              // onChange={(e) => setpassword(e.target.value)}
               onChange={handlePasswordChange}
             />
             <p
