@@ -39,7 +39,7 @@ const Login = () => {
         <h1>Login</h1>
         <span>Welcome back! Please log in to access your account.</span>
         <label htmlFor="email" className={classes["login-email"]}>
-          Email or Username
+          Email
         </label>
         <input
           type="text"
