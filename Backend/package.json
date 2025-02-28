@@ -24,7 +24,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1",
     "natural": "^8.0.1",
+    "node-cron": "^3.0.3",
     "stopword": "^3.1.4",
+    "xlsx": "^0.18.5",
     "xss-clean": "^0.1.4"
   },
   "devDependencies": {

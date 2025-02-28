@@ -6,6 +6,8 @@ const app = express();
 const authRoutes = require("./routes/auth");
 const ReviewsRoutes = require("./routes/reviews");
 const FetchUserRoute = require("./routes/user");
+require("./routes/salesData/financialCron"); // The cron job file
+
 const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   "https://reveify-mern-app--mu.vercel.app",

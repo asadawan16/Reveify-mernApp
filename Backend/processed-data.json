@@ -1,0 +1,675 @@
+{
+  "pointOfSales": [
+    {
+      "caisseEspeces": {
+        "billets50": 1800,
+        "billets20": 2700,
+        "billets10": 2170,
+        "billets5": 70,
+        "monnaie": 0,
+        "total": 410
+      },
+      "caisseCheques": {
+        "client": 584.35,
+        "montant": 464.08,
+        "total": 1193.2
+      },
+      "caisseCB": {
+        "client": 10256.02,
+        "montant": 204,
+        "total": 10718.52
+      },
+      "fondDeCaisse": 0,
+      "differenceFondCaisse": 23
+    }
+  ],
+  "websiteDelivery": {
+    "Paiements Chèques": [
+      {
+        "name": "efm ",
+        "amount": 503.95,
+        "banque": "lcl",
+        "numero": 791608,
+        "remarques": "ancien paiement ",
+        "sap": "ok"
+      },
+      {
+        "name": "crust chicken ",
+        "amount": 1147.03,
+        "banque": "caisse depargne ",
+        "numero": 622,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "le camelon voyageur ",
+        "amount": 427.24,
+        "banque": "banque populaire",
+        "numero": 32,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "gdr",
+        "amount": 173.81,
+        "banque": "cic",
+        "numero": 7340263,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "cdr",
+        "amount": 330.43,
+        "banque": "banque populaire",
+        "numero": 5386,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "salade ci ",
+        "amount": 263.75,
+        "banque": "caisse depargne ",
+        "numero": 301,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "boulangerie des poete ",
+        "amount": 496.19,
+        "banque": "caisse depargne ",
+        "numero": 608,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "pizza gril ",
+        "amount": 306.44,
+        "banque": "societe general",
+        "numero": 1328,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "etoile boulogne ",
+        "amount": 443.08,
+        "banque": "lcl",
+        "numero": 5361789,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "kermina ",
+        "amount": 595.02,
+        "banque": "credit agricole",
+        "numero": 8215693,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "mcv daumesnil",
+        "amount": 1682.26,
+        "banque": "bred",
+        "numero": 7700909,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "thisa",
+        "amount": 424.04,
+        "banque": "caisse depargne ",
+        "numero": 535,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "mcv dumas",
+        "amount": 457.79,
+        "banque": "bred",
+        "numero": 8891583,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "bk groupe ",
+        "amount": 1073.4,
+        "banque": "societe general",
+        "numero": 19,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "victoria 168",
+        "amount": 417.27,
+        "banque": "caisse depargne ",
+        "numero": 814,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "k-chimeak",
+        "amount": 359,
+        "banque": "bnp",
+        "numero": 3127246,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "winwin",
+        "amount": 441.49,
+        "banque": "banque populaire",
+        "numero": 1439,
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      }
+    ],
+    "Paiements Espèces": [
+      {
+        "name": "bk groupe ",
+        "amount": 400,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "dka",
+        "amount": 355.22,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      }
+    ],
+    "Paiements CB Site": [
+      {
+        "name": "morgane leleu ",
+        "amount": 2094.13,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "Omar Almohammad",
+        "amount": 359,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      }
+    ],
+    "Paiements CB Téléphone": [
+      {
+        "name": "AYATERING",
+        "amount": 376.88,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      }
+    ],
+    "Virements": [
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      }
+    ],
+    "Livraisons non payées": [
+      {
+        "name": "fast time ",
+        "amount": 1583.55,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "chicken vilage ",
+        "amount": 862.89,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "bona pizza ",
+        "amount": 765.7,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "mirosh ",
+        "amount": 527.5,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "utima food ",
+        "amount": 900.35,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "bumpy",
+        "amount": 891.64,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "parsley montreuil",
+        "amount": 521.17,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "omar almohammad",
+        "amount": 370.43,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "liliane",
+        "amount": 365.13,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "dupont cafe",
+        "amount": 422,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "chicken vilage ",
+        "amount": 527.5,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "gril bar ",
+        "amount": 479.75,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "se2",
+        "amount": 325,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "shameen",
+        "amount": 871.16,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "grl bar misselyn",
+        "amount": 449.37,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "l2h",
+        "amount": 431.18,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "sebastien gaspard",
+        "amount": 427,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "robert asseraf ",
+        "amount": 412.25,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "efm ",
+        "amount": 591.51,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": "ok"
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "TOTAL ESPECES",
+        "amount": 755.22,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "TOTAL CHEQUES",
+        "amount": 9542.19,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "TOTAL CB Internet & Phone",
+        "amount": 2830.01,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      },
+      {
+        "name": "",
+        "amount": 0,
+        "banque": "",
+        "numero": "",
+        "remarques": "",
+        "sap": ""
+      }
+    ],
+    "totalEspeces": 0,
+    "totalCheques": 0,
+    "totalCbInternetPhone": 0
+  }
+}
